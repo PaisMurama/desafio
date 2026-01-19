@@ -6,16 +6,18 @@ fimfuncao
 procedimento mostrarIMC(peso: real; altura:real)
 var
 descricao:caractere
-imc:real
+classificacao:real
 inicio
-imc <- imc(peso,altura)
-se imc <20 entao
+classificacao<-0
+classificacao <- imc(peso,altura)
+
+se (classificacao < 20) entao
    descricao<- "abaixo do peso"
    senao
-        se imc < 25 entao
+        se (classificacao < 25) entao
             descricao<- "peso normal"
         senao
-            se imc <30 entao
+            se (classificacao < 30) entao
                descricao <- "sobre peso"
             senao
                 descricao<- "obeso"
@@ -23,6 +25,7 @@ se imc <20 entao
             fimse
         fimse
    fimse
+
 escreval("CLASSIFICAÇÃO:",descricao)
 fimProcedimento
 
@@ -34,6 +37,6 @@ escreva("Digite o peso:")
 leia(peso)
 escreva("Digite a altura:")
 leia(altura)
-resultado <- imc(peso, altura)
-escreva("IMC = ", resultado:4:2)
+mostrarIMC(peso,altura)
+
 Fimalgoritmo
